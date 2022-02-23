@@ -52,3 +52,29 @@ function isWeekend(date) {
 console.log(isWeekend("2022-02-12")); // true
 console.log(isWeekend("2022-02-13")); // true
 console.log(isWeekend("2022-02-09")); // false
+
+//Task4
+const person = {
+  fullName: "Sherlock Holmes",
+  address: {
+    street: "Baker Street",
+    city: "London",
+    house: "221b",
+  },
+};
+
+const jsonString = JSON.stringify(person);
+console.log(jsonString);
+
+const objectPerson = JSON.parse(jsonString);
+console.log(objectPerson);
+
+let {
+  fullName,
+  address: { street, city, house },
+} = person;
+
+console.log(fullName);
+console.log(street);
+console.log(city);
+console.log(house);
