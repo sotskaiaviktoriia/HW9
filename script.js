@@ -15,8 +15,6 @@ function getDiffDays(start, end) {
   const dateEnd = new Date(end);
   const oneDayMs = 86400000;
 
-  const passedDays = (dateEnd.getTime() - dateStart.getTime()) / oneDayMs;
-
   if (
     dateStart.toString() === "Invalid Date" ||
     dateEnd.toString() === "Invalid Date"
@@ -29,6 +27,7 @@ function getDiffDays(start, end) {
     console.error("Error: your start date is later than end");
     return;
   }
+  const passedDays = (dateEnd.getTime() - dateStart.getTime()) / oneDayMs;
   return passedDays;
 }
 
@@ -42,11 +41,7 @@ function isWeekend(date) {
   const newDate = new Date(date);
   const day = newDate.getDay();
 
-  if (day === 0 || day === 6) {
-    return true;
-  } else {
-    return false;
-  }
+  return day === 0 || day === 6;
 }
 
 console.log(isWeekend("2022-02-12")); // true
